@@ -31,13 +31,13 @@ class TvModelDetail extends Equatable {
     bool adult;
     String backdropPath;
     List<dynamic> episodeRunTime;
-    String firstAirDate;
+    String? firstAirDate;
     String homepage;
     int id;
     List<GenreModel> genres;
     bool inProduction;
     List<String> languages;
-    String lastAirDate;
+    String? lastAirDate;
     String name;
     int numberOfEpisodes;
     int numberOfSeasons;
@@ -106,13 +106,13 @@ class TvModelDetail extends Equatable {
        adult: this.adult,
        backdropPath: this.backdropPath,
        episodeRunTime: this.episodeRunTime,
-       firstAirDate: this.firstAirDate,
+       firstAirDate: this.firstAirDate.toString(),
        homepage: this.homepage,
        id: this.id,
        genres: this.genres.map((genre) => genre.toEntity()).toList(),
        inProduction: this.inProduction,
        languages: this.languages,
-       lastAirDate: this.lastAirDate,
+       lastAirDate: this.lastAirDate.toString(),
        name: this.name,
        numberOfEpisodes: this.numberOfEpisodes,
        numberOfSeasons: this.numberOfSeasons,
