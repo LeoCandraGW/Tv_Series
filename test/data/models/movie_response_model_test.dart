@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:TV_Series/data/models/movie_model.dart';
-import 'package:TV_Series/data/models/movie_response.dart';
+import 'package:TV_Series/data/models/tv_model.dart';
+import 'package:TV_Series/data/models/tv_response.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../json_reader.dart';

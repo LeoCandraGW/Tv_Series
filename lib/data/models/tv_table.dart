@@ -1,28 +1,28 @@
-import 'package:TV_Series/domain/entities/movie.dart';
-import 'package:TV_Series/domain/entities/movie_detail.dart';
+import 'package:TV_Series/domain/entities/tv.dart';
+import 'package:TV_Series/domain/entities/tv_detail.dart';
 import 'package:equatable/equatable.dart';
 
-class MovieTable extends Equatable {
+class TvTable extends Equatable {
   final int id;
   final String? name;
   final String? posterPath;
   final String? overview;
 
-  MovieTable({
+  TvTable({
     required this.id,
     required this.name,
     required this.posterPath,
     required this.overview,
   });
 
-  factory MovieTable.fromEntity(MovieDetail movie) => MovieTable(
-        id: movie.id,
-        name: movie.name,
-        posterPath: movie.posterPath,
-        overview: movie.overview,
+  factory TvTable.fromEntity(TvDetail tv) => TvTable(
+        id: tv.id,
+        name: tv.name,
+        posterPath: tv.posterPath,
+        overview: tv.overview,
       );
 
-  factory MovieTable.fromMap(Map<String, dynamic> map) => MovieTable(
+  factory TvTable.fromMap(Map<String, dynamic> map) => TvTable(
         id: map['id'],
         name: map['name'],
         posterPath: map['posterPath'],
@@ -36,7 +36,7 @@ class MovieTable extends Equatable {
         'overview': overview,
       };
 
-  Movie toEntity() => Movie.watchlisto(
+  Tv toEntity() => Tv.watchlisto(
         id: id,
         overview: overview.toString(),
         posterPath: posterPath.toString(),

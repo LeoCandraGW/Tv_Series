@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:TV_Series/domain/entities/movie.dart';
-import 'package:TV_Series/domain/usecases/get_now_playing_movies.dart';
+import 'package:TV_Series/domain/entities/tv.dart';
+import 'package:TV_Series/domain/usecases/get_now_playing_tv.dart';
 import 'package:TV_Series/common/failure.dart';
-import 'package:TV_Series/domain/usecases/get_popular_movies.dart';
-import 'package:TV_Series/domain/usecases/get_top_rated_movies.dart';
-import 'package:TV_Series/presentation/provider/movie_list_notifier.dart';
+import 'package:TV_Series/domain/usecases/get_popular_tv.dart';
+import 'package:TV_Series/domain/usecases/get_top_rated_tv.dart';
+import 'package:TV_Series/presentation/provider/tv_list_notifier.dart';
 import 'package:TV_Series/common/state_enum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

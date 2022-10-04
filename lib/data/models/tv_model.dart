@@ -1,4 +1,4 @@
-import 'package:TV_Series/domain/entities/movie.dart';
+import 'package:TV_Series/domain/entities/tv.dart';
 import 'package:equatable/equatable.dart';
 
 class TvModel extends Equatable{
@@ -52,8 +52,8 @@ class TvModel extends Equatable{
         "vote_average": voteAverage,
         "vote_count": voteCount,
     };
-    Movie toEntity() {
-    return Movie(
+    Tv toEntity() {
+    return Tv(
         backdropPath: this.backdropPath,
         genreIds: this.genreIds,
         id: this.id,

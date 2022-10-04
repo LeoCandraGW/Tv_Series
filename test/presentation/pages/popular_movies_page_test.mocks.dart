@@ -6,9 +6,9 @@ import 'dart:async' as _i6;
 import 'dart:ui' as _i7;
 
 import 'package:TV_Series/common/state_enum.dart' as _i4;
-import 'package:TV_Series/domain/entities/movie.dart' as _i5;
-import 'package:TV_Series/domain/usecases/get_popular_movies.dart' as _i2;
-import 'package:TV_Series/presentation/provider/popular_movies_notifier.dart'
+import 'package:TV_Series/domain/entities/tv.dart' as _i5;
+import 'package:TV_Series/domain/usecases/get_popular_tv.dart' as _i2;
+import 'package:TV_Series/presentation/provider/popular_tv_notifier.dart'
     as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 

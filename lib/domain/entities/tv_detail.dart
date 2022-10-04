@@ -1,8 +1,8 @@
 import 'package:TV_Series/domain/entities/genre.dart';
 import 'package:equatable/equatable.dart';
 
-class MovieDetail extends Equatable {
-  MovieDetail({
+class TvDetail extends Equatable {
+  TvDetail({
     required this.adult,
        required this.backdropPath,
        required this.episodeRunTime,

@@ -1,7 +1,7 @@
-import 'package:TV_Series/data/models/movie_table.dart';
+import 'package:TV_Series/data/models/tv_table.dart';
 import 'package:TV_Series/domain/entities/genre.dart';
-import 'package:TV_Series/domain/entities/movie.dart';
-import 'package:TV_Series/domain/entities/movie_detail.dart';
+import 'package:TV_Series/domain/entities/tv.dart';
+import 'package:TV_Series/domain/entities/tv_detail.dart';
 
 final testMovie = Movie(
   backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',
