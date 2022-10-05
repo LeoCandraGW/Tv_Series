@@ -2,11 +2,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:TV_Series/common/constants.dart';
 import 'package:TV_Series/domain/entities/tv.dart';
 import 'package:TV_Series/presentation/pages/about_page.dart';
-import 'package:TV_Series/presentation/pages/movie_detail_page.dart';
-import 'package:TV_Series/presentation/pages/popular_movies_page.dart';
-import 'package:TV_Series/presentation/pages/search_page.dart';
-import 'package:TV_Series/presentation/pages/top_rated_movies_page.dart';
-import 'package:TV_Series/presentation/pages/watchlist_movies_page.dart';
+import 'package:TV_Series/presentation/pages/tv_detail_page.dart';
+import 'package:TV_Series/presentation/pages/popular_tv_page.dart';
+import 'package:TV_Series/presentation/pages/search_tv_page.dart';
+import 'package:TV_Series/presentation/pages/top_rated_tv_page.dart';
+import 'package:TV_Series/presentation/pages/watchlist_tv_page.dart';
 import 'package:TV_Series/presentation/provider/tv_list_notifier.dart';
 import 'package:TV_Series/common/state_enum.dart';
 import 'package:flutter/material.dart';
@@ -70,7 +70,7 @@ class _HomeTvPageState extends State<HomeTvPage> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, SearchPage.ROUTE_NAME);
+              Navigator.pushNamed(context, SearchPageTv.ROUTE_NAME);
             },
             icon: Icon(Icons.search),
           )

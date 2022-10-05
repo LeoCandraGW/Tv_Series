@@ -1,4 +1,4 @@
-import 'package:TV_Series/data/datasources/db/database_helper.dart';
+import 'package:TV_Series/data/datasources/db/database_helper_tv.dart';
 import 'package:TV_Series/data/datasources/tv_local_data_source.dart';
 import 'package:TV_Series/data/datasources/tv_remote_data_source.dart';
 import 'package:TV_Series/data/repositories/tv_repository_impl.dart';
@@ -18,7 +18,7 @@ import 'package:TV_Series/presentation/provider/tv_list_notifier.dart';
 import 'package:TV_Series/presentation/provider/tv_search_notifier.dart';
 import 'package:TV_Series/presentation/provider/popular_tv_notifier.dart';
 import 'package:TV_Series/presentation/provider/top_rated_tv_notifier.dart';
-import 'package:TV_Series/presentation/provider/watchlist_movie_notifier.dart';
+import 'package:TV_Series/presentation/provider/watchlist_tv_notifier.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 
@@ -78,8 +78,8 @@ void init() {
   // repository
   locator.registerLazySingleton<TvRepository>(
     () => TvRepositoryImpl(
-      remoteDataSource: locator(),
-      localDataSource: locator(),
+      TvremoteDataSource: locator(),
+      TvlocalDataSource: locator(),
     ),
   );
 

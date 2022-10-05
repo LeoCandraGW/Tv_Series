@@ -90,11 +90,11 @@ void main() {
     test('should return list of TvTable from database', () async {
       // arrange
       when(mockDatabaseHelper.getWatchlistTv())
-          .thenAnswer((_) async => [testMovieMap]);
+          .thenAnswer((_) async => [testTvMap]);
       // act
-      final result = await dataSource.getWatchlistMovies();
+      final result = await dataSource.getWatchlistTv();
       // assert
-      expect(result, [testMovieTable]);
+      expect(result, [testTvTable]);
     });
   });
 }

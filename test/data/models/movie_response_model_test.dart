@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import '../../json_reader.dart';
 
 void main() {
-  final tMovieModel = TvModel(
+  final tTvModel = TvModel(
     backdropPath: "/path.jpg",
     genreIds: [1, 2, 3, 4],
     id: 1,
@@ -19,17 +19,17 @@ void main() {
     voteAverage: 1.0,
     voteCount: 1,
   );
-  final tMovieResponseModel =
-      MovieResponse(movieList: <TvModel>[tMovieModel]);
+  final tTvResponseModel =
+      TvResponse(tvList: <TvModel>[tTvModel]);
   group('fromJson', () {
     test('should return a valid model from JSON', () async {
       // arrange
       final Map<String, dynamic> jsonMap =
           json.decode(readJson('dummy_data/now_playing.json'));
       // act
-      final result = MovieResponse.fromJson(jsonMap);
+      final result = TvResponse.fromJson(jsonMap);
       // assert
-      expect(result, tMovieResponseModel);
+      expect(result, tTvResponseModel);
     });
   });
 
@@ -38,7 +38,7 @@ void main() {
       // arrange
 
       // act
-      final result = tMovieResponseModel.toJson();
+      final result = tTvResponseModel.toJson();
       // assert
       final expectedJsonMap = {
         "results": [

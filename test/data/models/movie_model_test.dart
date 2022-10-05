@@ -3,7 +3,7 @@ import 'package:TV_Series/domain/entities/tv.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  final tMovieModel = TvModel(
+  final tTvModel = TvModel(
     backdropPath: 'backdropPath',
     genreIds: [1, 2, 3],
     id: 1,
@@ -16,7 +16,7 @@ void main() {
     voteCount: 1,
   );
 
-  final tMovie = Movie(
+  final tTv = Tv(
     backdropPath: 'backdropPath',
     genreIds: [1, 2, 3],
     id: 1,
@@ -29,8 +29,8 @@ void main() {
     voteCount: 1,
   );
 
-  test('should be a subclass of Movie entity', () async {
-    final result = tMovieModel.toEntity();
-    expect(result, tMovie);
+  test('should be a subclass of Tv entity', () async {
+    final result = tTvModel.toEntity();
+    expect(result, tTv);
   });
 }

@@ -7,28 +7,28 @@ import 'package:mockito/mockito.dart';
 import '../../helpers/test_helper.mocks.dart';
 
 void main() {
-  late GetPopularMovies usecase;
-  late MockMovieRepository mockMovieRpository;
+  late GetPopularTv usecase;
+  late MockTvRepository mockTvRpository;
 
   setUp(() {
-    mockMovieRpository = MockMovieRepository();
-    usecase = GetPopularMovies(mockMovieRpository);
+    mockTvRpository = MockTvRepository();
+    usecase = GetPopularTv(mockTvRpository);
   });
 
-  final tMovies = <Movie>[];
+  final tTv = <Tv>[];
 
-  group('GetPopularMovies Tests', () {
+  group('GetPopularTv Tests', () {
     group('execute', () {
       test(
-          'should get list of movies from the repository when execute function is called',
+          'should get list of tv from the repository when execute function is called',
           () async {
         // arrange
-        when(mockMovieRpository.getPopularMovies())
-            .thenAnswer((_) async => Right(tMovies));
+        when(mockTvRpository.getPopularTv())
+            .thenAnswer((_) async => Right(tTv));
         // act
         final result = await usecase.execute();
         // assert
-        expect(result, Right(tMovies));
+        expect(result, Right(tTv));
       });
     });
   });

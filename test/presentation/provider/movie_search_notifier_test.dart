@@ -10,22 +10,22 @@ import 'package:mockito/mockito.dart';
 
 import 'movie_search_notifier_test.mocks.dart';
 
-@GenerateMocks([SearchMovies])
+@GenerateMocks([SearchTv])
 void main() {
-  late MovieSearchNotifier provider;
-  late MockSearchMovies mockSearchMovies;
+  late TvSearchNotifier provider;
+  late MockSearchTv mockSearchTv;
   late int listenerCallCount;
 
   setUp(() {
     listenerCallCount = 0;
-    mockSearchMovies = MockSearchMovies();
-    provider = MovieSearchNotifier(searchMovies: mockSearchMovies)
+    mockSearchTv = MockSearchTv();
+    provider = TvSearchNotifier(searchTv: mockSearchTv)
       ..addListener(() {
         listenerCallCount += 1;
       });
   });
 
-  final tMovieModel = Movie(
+  final tTvModel = Tv(
     backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',
     genreIds: [14, 28],
     id: 557,
@@ -38,16 +38,16 @@ void main() {
     voteAverage: 7.2,
     voteCount: 13507,
   );
-  final tMovieList = <Movie>[tMovieModel];
+  final tTvList = <Tv>[tTvModel];
   final tQuery = 'spiderman';
 
-  group('search movies', () {
+  group('search tv', () {
     test('should change state to loading when usecase is called', () async {
       // arrange
-      when(mockSearchMovies.execute(tQuery))
-          .thenAnswer((_) async => Right(tMovieList));
+      when(mockSearchTv.execute(tQuery))
+          .thenAnswer((_) async => Right(tTvList));
       // act
-      provider.fetchMovieSearch(tQuery);
+      provider.fetchTvSearch(tQuery);
       // assert
       expect(provider.state, RequestState.Loading);
     });
@@ -55,22 +55,22 @@ void main() {
     test('should change search result data when data is gotten successfully',
         () async {
       // arrange
-      when(mockSearchMovies.execute(tQuery))
-          .thenAnswer((_) async => Right(tMovieList));
+      when(mockSearchTv.execute(tQuery))
+          .thenAnswer((_) async => Right(tTvList));
       // act
-      await provider.fetchMovieSearch(tQuery);
+      await provider.fetchTvSearch(tQuery);
       // assert
       expect(provider.state, RequestState.Loaded);
-      expect(provider.searchResult, tMovieList);
+      expect(provider.searchResult, tTvList);
       expect(listenerCallCount, 2);
     });
 
     test('should return error when data is unsuccessful', () async {
       // arrange
-      when(mockSearchMovies.execute(tQuery))
+      when(mockSearchTv.execute(tQuery))
           .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
       // act
-      await provider.fetchMovieSearch(tQuery);
+      await provider.fetchTvSearch(tQuery);
       // assert
       expect(provider.state, RequestState.Error);
       expect(provider.message, 'Server Failure');

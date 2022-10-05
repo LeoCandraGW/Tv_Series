@@ -1,5 +1,5 @@
 import 'package:TV_Series/common/exception.dart';
-import 'package:TV_Series/data/datasources/db/database_helper.dart';
+import 'package:TV_Series/data/datasources/db/database_helper_tv.dart';
 import 'package:TV_Series/data/models/tv_table.dart';
 
 abstract class TvLocalDataSource {

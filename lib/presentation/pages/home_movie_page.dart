@@ -1,14 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:ditonton/common/constants.dart';
-import 'package:ditonton/domain/entities/movie.dart';
-import 'package:ditonton/presentation/pages/about_page.dart';
-import 'package:ditonton/presentation/pages/movie_detail_page.dart';
-import 'package:ditonton/presentation/pages/popular_movies_page.dart';
-import 'package:ditonton/presentation/pages/search_page.dart';
-import 'package:ditonton/presentation/pages/top_rated_movies_page.dart';
-import 'package:ditonton/presentation/pages/watchlist_movies_page.dart';
-import 'package:ditonton/presentation/provider/movie_list_notifier.dart';
-import 'package:ditonton/common/state_enum.dart';
+import 'package:TV_Series/common/constants.dart';
+import 'package:TV_Series/domain/entities/movie.dart';
+import 'package:TV_Series/presentation/pages/about_page.dart';
+import 'package:TV_Series/presentation/pages/movie_detail_page.dart';
+import 'package:TV_Series/presentation/pages/popular_movies_page.dart';
+import 'package:TV_Series/presentation/pages/search_movie_page.dart';
+import 'package:TV_Series/presentation/pages/top_rated_movies_page.dart';
+import 'package:TV_Series/presentation/pages/watchlist_movies_page.dart';
+import 'package:TV_Series/presentation/provider/movie_list_notifier.dart';
+import 'package:TV_Series/common/state_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -70,7 +70,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, SearchPage.ROUTE_NAME);
+              Navigator.pushNamed(context, SearchPageMovie.ROUTE_NAME);
             },
             icon: Icon(Icons.search),
           )

@@ -3,7 +3,7 @@ import 'package:TV_Series/domain/entities/genre.dart';
 import 'package:TV_Series/domain/entities/tv.dart';
 import 'package:TV_Series/domain/entities/tv_detail.dart';
 
-final testMovie = Movie(
+final testTv = Tv(
   backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',
   genreIds: [14, 28],
   id: 557,
@@ -17,9 +17,9 @@ final testMovie = Movie(
   voteCount: 13507,
 );
 
-final testMovieList = [testMovie];
+final testTvList = [testTv];
 
-final testMovieDetail = MovieDetail(
+final testTvDetail = TvDetail(
   adult: false,
       backdropPath: 'backdropPath',
       genres: [Genre(id: 1, name: 'Action')],
@@ -44,21 +44,21 @@ final testMovieDetail = MovieDetail(
       voteCount: 1,
 );
 
-final testWatchlistMovie = Movie.watchlisto(
+final testWatchlistTv = Tv.watchlisto(
   id: 1,
   name: 'name',
   posterPath: 'posterPath',
   overview: 'overview',
 );
 
-final testMovieTable = MovieTable(
+final testTvTable = TvTable(
   id: 1,
   name: 'name',
   posterPath: 'posterPath',
   overview: 'overview',
 );
 
-final testMovieMap = {
+final testTvMap = {
   'id': 1,
   'overview': 'overview',
   'posterPath': 'posterPath',

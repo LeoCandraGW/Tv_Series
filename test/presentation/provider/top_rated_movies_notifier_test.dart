@@ -10,22 +10,22 @@ import 'package:mockito/mockito.dart';
 
 import 'top_rated_movies_notifier_test.mocks.dart';
 
-@GenerateMocks([GetTopRatedMovies])
+@GenerateMocks([GetTopRatedTv])
 void main() {
-  late MockGetTopRatedMovies mockGetTopRatedMovies;
-  late TopRatedMoviesNotifier notifier;
+  late MockGetTopRatedTv mockGetTopRatedTv;
+  late TopRatedTvNotifier notifier;
   late int listenerCallCount;
 
   setUp(() {
     listenerCallCount = 0;
-    mockGetTopRatedMovies = MockGetTopRatedMovies();
-    notifier = TopRatedMoviesNotifier(getTopRatedMovies: mockGetTopRatedMovies)
+    mockGetTopRatedTv = MockGetTopRatedTv();
+    notifier = TopRatedTvNotifier(getTopRatedTv: mockGetTopRatedTv)
       ..addListener(() {
         listenerCallCount++;
       });
   });
 
-  final tMovie = Movie(
+  final tTv = Tv(
     backdropPath: 'backdropPath',
     genreIds: [1, 2, 3],
     id: 1,
@@ -38,37 +38,37 @@ void main() {
     voteCount: 1,
   );
 
-  final tMovieList = <Movie>[tMovie];
+  final tTvList = <Tv>[tTv];
 
   test('should change state to loading when usecase is called', () async {
     // arrange
-    when(mockGetTopRatedMovies.execute())
-        .thenAnswer((_) async => Right(tMovieList));
+    when(mockGetTopRatedTv.execute())
+        .thenAnswer((_) async => Right(tTvList));
     // act
-    notifier.fetchTopRatedMovies();
+    notifier.fetchTopRatedTv();
     // assert
     expect(notifier.state, RequestState.Loading);
     expect(listenerCallCount, 1);
   });
 
-  test('should change movies data when data is gotten successfully', () async {
+  test('should change tv data when data is gotten successfully', () async {
     // arrange
-    when(mockGetTopRatedMovies.execute())
-        .thenAnswer((_) async => Right(tMovieList));
+    when(mockGetTopRatedTv.execute())
+        .thenAnswer((_) async => Right(tTvList));
     // act
-    await notifier.fetchTopRatedMovies();
+    await notifier.fetchTopRatedTv();
     // assert
     expect(notifier.state, RequestState.Loaded);
-    expect(notifier.movies, tMovieList);
+    expect(notifier.tv, tTvList);
     expect(listenerCallCount, 2);
   });
 
   test('should return error when data is unsuccessful', () async {
     // arrange
-    when(mockGetTopRatedMovies.execute())
+    when(mockGetTopRatedTv.execute())
         .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
     // act
-    await notifier.fetchTopRatedMovies();
+    await notifier.fetchTopRatedTv();
     // assert
     expect(notifier.state, RequestState.Error);
     expect(notifier.message, 'Server Failure');
