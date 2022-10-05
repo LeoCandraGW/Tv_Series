@@ -1,14 +1,14 @@
 import 'package:dartz/dartz.dart';
-import 'package:TV_Series/common/failure.dart';
-import 'package:TV_Series/domain/entities/tv_detail.dart';
-import 'package:TV_Series/domain/repositories/tv_repository.dart';
+import 'package:tv_series/common/failure.dart';
+import 'package:tv_series/domain/entities/tv_detail.dart';
+import 'package:tv_series/domain/repositories/tv_repository.dart';
 
-class RemoveWatchlist {
+class RemoveWatchlistTv {
   final TvRepository repository;
 
-  RemoveWatchlist(this.repository);
+  RemoveWatchlistTv(this.repository);
 
   Future<Either<Failure, String>> execute(TvDetail tv) {
-    return repository.removeWatchlist(tv);
+    return repository.removeWatchlistTv(tv);
   }
 }

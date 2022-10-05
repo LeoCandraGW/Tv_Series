@@ -1,13 +1,13 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:TV_Series/data/models/genre_model.dart';
-import 'package:TV_Series/data/models/tv_detail_model.dart';
-import 'package:TV_Series/data/models/tv_model.dart';
-import 'package:TV_Series/data/repositories/tv_repository_impl.dart';
-import 'package:TV_Series/common/exception.dart';
-import 'package:TV_Series/common/failure.dart';
-import 'package:TV_Series/domain/entities/tv.dart';
+import 'package:tv_series/data/models/genre_model.dart';
+import 'package:tv_series/data/models/tv_detail_model.dart';
+import 'package:tv_series/data/models/tv_model.dart';
+import 'package:tv_series/data/repositories/tv_repository_impl.dart';
+import 'package:tv_series/common/exception.dart';
+import 'package:tv_series/common/failure.dart';
+import 'package:tv_series/domain/entities/tv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
@@ -23,8 +23,8 @@ void main() {
     mockRemoteDataSource = MockTvRemoteDataSource();
     mockLocalDataSource = MockTvLocalDataSource();
     repository = TvRepositoryImpl(
-      TvremoteDataSource: mockRemoteDataSource,
-      TvlocalDataSource: mockLocalDataSource,
+      tvremoteDataSource: mockRemoteDataSource,
+      tvlocalDataSource: mockLocalDataSource,
     );
   });
 
@@ -343,7 +343,7 @@ void main() {
       when(mockLocalDataSource.insertWatchlist(testTvTable))
           .thenAnswer((_) async => 'Added to Watchlist');
       // act
-      final result = await repository.saveWatchlist(testTvDetail);
+      final result = await repository.saveWatchlistTv(testTvDetail);
       // assert
       expect(result, Right('Added to Watchlist'));
     });
@@ -353,7 +353,7 @@ void main() {
       when(mockLocalDataSource.insertWatchlist(testTvTable))
           .thenThrow(DatabaseException('Failed to add watchlist'));
       // act
-      final result = await repository.saveWatchlist(testTvDetail);
+      final result = await repository.saveWatchlistTv(testTvDetail);
       // assert
       expect(result, Left(DatabaseFailure('Failed to add watchlist')));
     });
@@ -365,7 +365,7 @@ void main() {
       when(mockLocalDataSource.removeWatchlist(testTvTable))
           .thenAnswer((_) async => 'Removed from watchlist');
       // act
-      final result = await repository.removeWatchlist(testTvDetail);
+      final result = await repository.removeWatchlistTv(testTvDetail);
       // assert
       expect(result, Right('Removed from watchlist'));
     });
@@ -375,7 +375,7 @@ void main() {
       when(mockLocalDataSource.removeWatchlist(testTvTable))
           .thenThrow(DatabaseException('Failed to remove watchlist'));
       // act
-      final result = await repository.removeWatchlist(testTvDetail);
+      final result = await repository.removeWatchlistTv(testTvDetail);
       // assert
       expect(result, Left(DatabaseFailure('Failed to remove watchlist')));
     });
@@ -387,7 +387,7 @@ void main() {
       final tId = 1;
       when(mockLocalDataSource.getTvById(tId)).thenAnswer((_) async => null);
       // act
-      final result = await repository.isAddedToWatchlist(tId);
+      final result = await repository.isAddedToWatchlistTv(tId);
       // assert
       expect(result, false);
     });

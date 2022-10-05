@@ -1,7 +1,7 @@
-import 'package:TV_Series/common/state_enum.dart';
-import 'package:TV_Series/domain/entities/tv.dart';
-import 'package:TV_Series/presentation/pages/top_rated_tv_page.dart';
-import 'package:TV_Series/presentation/provider/top_rated_tv_notifier.dart';
+import 'package:tv_series/common/state_enum.dart';
+import 'package:tv_series/domain/entities/tv.dart';
+import 'package:tv_series/presentation/pages/top_rated_tv_page.dart';
+import 'package:tv_series/presentation/provider/top_rated_tv_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

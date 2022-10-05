@@ -1,5 +1,5 @@
-import 'package:TV_Series/domain/entities/movie.dart';
-import 'package:TV_Series/domain/entities/movie_detail.dart';
+import 'package:tv_series/domain/entities/movie.dart';
+import 'package:tv_series/domain/entities/movie_detail.dart';
 import 'package:equatable/equatable.dart';
 
 class MovieTable extends Equatable {
@@ -44,6 +44,5 @@ class MovieTable extends Equatable {
       );
 
   @override
-  // TODO: implement props
   List<Object?> get props => [id, title, posterPath, overview];
 }

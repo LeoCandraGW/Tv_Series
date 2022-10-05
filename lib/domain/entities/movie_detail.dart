@@ -1,4 +1,4 @@
-import 'package:TV_Series/domain/entities/genre.dart';
+import 'package:tv_series/domain/entities/genre.dart';
 import 'package:equatable/equatable.dart';
 
 class MovieDetail extends Equatable {

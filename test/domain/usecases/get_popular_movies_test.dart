@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:TV_Series/domain/entities/tv.dart';
-import 'package:TV_Series/domain/usecases/get_popular_tv.dart';
+import 'package:tv_series/domain/entities/tv.dart';
+import 'package:tv_series/domain/usecases/get_popular_tv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 

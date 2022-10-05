@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:TV_Series/domain/entities/movie.dart';
-import 'package:TV_Series/domain/repositories/movie_repository.dart';
-import 'package:TV_Series/common/failure.dart';
+import 'package:tv_series/domain/entities/movie.dart';
+import 'package:tv_series/domain/repositories/movie_repository.dart';
+import 'package:tv_series/common/failure.dart';
 
 class GetMovieRecommendations {
   final MovieRepository repository;

@@ -1,14 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:TV_Series/common/constants.dart';
-import 'package:TV_Series/domain/entities/tv.dart';
-import 'package:TV_Series/presentation/pages/about_page.dart';
-import 'package:TV_Series/presentation/pages/tv_detail_page.dart';
-import 'package:TV_Series/presentation/pages/popular_tv_page.dart';
-import 'package:TV_Series/presentation/pages/search_tv_page.dart';
-import 'package:TV_Series/presentation/pages/top_rated_tv_page.dart';
-import 'package:TV_Series/presentation/pages/watchlist_tv_page.dart';
-import 'package:TV_Series/presentation/provider/tv_list_notifier.dart';
-import 'package:TV_Series/common/state_enum.dart';
+import 'package:tv_series/common/constants.dart';
+import 'package:tv_series/domain/entities/tv.dart';
+import 'package:tv_series/presentation/pages/about_page.dart';
+import 'package:tv_series/presentation/pages/tv_detail_page.dart';
+import 'package:tv_series/presentation/pages/popular_tv_page.dart';
+import 'package:tv_series/presentation/pages/search_tv_page.dart';
+import 'package:tv_series/presentation/pages/top_rated_tv_page.dart';
+import 'package:tv_series/presentation/pages/watchlist_tv_page.dart';
+import 'package:tv_series/presentation/provider/tv_list_notifier.dart';
+import 'package:tv_series/common/state_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

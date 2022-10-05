@@ -1,5 +1,5 @@
-import 'package:TV_Series/domain/entities/tv.dart';
-import 'package:TV_Series/domain/entities/tv_detail.dart';
+import 'package:tv_series/domain/entities/tv.dart';
+import 'package:tv_series/domain/entities/tv_detail.dart';
 import 'package:equatable/equatable.dart';
 
 class TvTable extends Equatable {
@@ -44,6 +44,5 @@ class TvTable extends Equatable {
       );
 
   @override
-  // TODO: implement props
   List<Object?> get props => [id, name, posterPath, overview];
 }

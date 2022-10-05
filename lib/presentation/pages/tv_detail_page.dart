@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:TV_Series/common/constants.dart';
-import 'package:TV_Series/domain/entities/genre.dart';
-import 'package:TV_Series/domain/entities/tv.dart';
-import 'package:TV_Series/domain/entities/tv_detail.dart';
-import 'package:TV_Series/presentation/provider/tv_detail_notifier.dart';
-import 'package:TV_Series/common/state_enum.dart';
+import 'package:tv_series/common/constants.dart';
+import 'package:tv_series/domain/entities/genre.dart';
+import 'package:tv_series/domain/entities/tv.dart';
+import 'package:tv_series/domain/entities/tv_detail.dart';
+import 'package:tv_series/presentation/provider/tv_detail_notifier.dart';
+import 'package:tv_series/common/state_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';

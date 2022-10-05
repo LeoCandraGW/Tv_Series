@@ -7,17 +7,17 @@ import 'dart:convert' as _i18;
 import 'dart:typed_data' as _i19;
 
 import 'package:dartz/dartz.dart' as _i2;
-import 'package:TV_Series/common/failure.dart' as _i8;
-import 'package:TV_Series/data/datasources/db/database_helper_tv.dart' as _i15;
-import 'package:TV_Series/data/datasources/tv_local_data_source.dart' as _i13;
-import 'package:TV_Series/data/datasources/tv_remote_data_source.dart'
+import 'package:tv_series/common/failure.dart' as _i8;
+import 'package:tv_series/data/datasources/db/database_helper_tv.dart' as _i15;
+import 'package:tv_series/data/datasources/tv_local_data_source.dart' as _i13;
+import 'package:tv_series/data/datasources/tv_remote_data_source.dart'
     as _i11;
-import 'package:TV_Series/data/models/tv_detail_model.dart' as _i3;
-import 'package:TV_Series/data/models/tv_model.dart' as _i12;
-import 'package:TV_Series/data/models/tv_table.dart' as _i14;
-import 'package:TV_Series/domain/entities/tv.dart' as _i9;
-import 'package:TV_Series/domain/entities/tv_detail.dart' as _i10;
-import 'package:TV_Series/domain/repositories/tv_repository.dart' as _i6;
+import 'package:tv_series/data/models/tv_detail_model.dart' as _i3;
+import 'package:tv_series/data/models/tv_model.dart' as _i12;
+import 'package:tv_series/data/models/tv_table.dart' as _i14;
+import 'package:tv_series/domain/entities/tv.dart' as _i9;
+import 'package:tv_series/domain/entities/tv_detail.dart' as _i10;
+import 'package:tv_series/domain/repositories/tv_repository.dart' as _i6;
 import 'package:http/src/base_request.dart' as _i20;
 import 'package:http/src/client.dart' as _i17;
 import 'package:http/src/response.dart' as _i4;
@@ -87,21 +87,21 @@ class MockTvRepository extends _i1.Mock implements _i6.TvRepository {
           returnValue: Future<_i2.Either<_i8.Failure, List<_i9.Tv>>>.value(
               _FakeEither<_i8.Failure, List<_i9.Tv>>())) as _i7
           .Future<_i2.Either<_i8.Failure, List<_i9.Tv>>>);
-  @override
+
   _i7.Future<_i2.Either<_i8.Failure, String>> saveWatchlist(
           _i10.TvDetail? tv) =>
       (super.noSuchMethod(Invocation.method(#saveWatchlist, [tv]),
               returnValue: Future<_i2.Either<_i8.Failure, String>>.value(
                   _FakeEither<_i8.Failure, String>()))
           as _i7.Future<_i2.Either<_i8.Failure, String>>);
-  @override
+
   _i7.Future<_i2.Either<_i8.Failure, String>> removeWatchlist(
           _i10.TvDetail? tv) =>
       (super.noSuchMethod(Invocation.method(#removeWatchlist, [tv]),
               returnValue: Future<_i2.Either<_i8.Failure, String>>.value(
                   _FakeEither<_i8.Failure, String>()))
           as _i7.Future<_i2.Either<_i8.Failure, String>>);
-  @override
+  
   _i7.Future<bool> isAddedToWatchlist(int? id) =>
       (super.noSuchMethod(Invocation.method(#isAddedToWatchlist, [id]),
           returnValue: Future<bool>.value(false)) as _i7.Future<bool>);
@@ -167,11 +167,11 @@ class MockTvLocalDataSource extends _i1.Mock
     _i1.throwOnMissingStub(this);
   }
 
-  @override
+
   _i7.Future<String> insertWatchlist(_i14.TvTable? tv) =>
       (super.noSuchMethod(Invocation.method(#insertWatchlist, [tv]),
           returnValue: Future<String>.value('')) as _i7.Future<String>);
-  @override
+  
   _i7.Future<String> removeWatchlist(_i14.TvTable? tv) =>
       (super.noSuchMethod(Invocation.method(#removeWatchlist, [tv]),
           returnValue: Future<String>.value('')) as _i7.Future<String>);
@@ -200,11 +200,11 @@ class MockDatabaseHelper extends _i1.Mock implements _i15.DatabaseHelper {
       (super.noSuchMethod(Invocation.getter(#database),
               returnValue: Future<_i16.Database?>.value())
           as _i7.Future<_i16.Database?>);
-  @override
+ 
   _i7.Future<int> insertWatchlist(_i14.TvTable? tv) =>
       (super.noSuchMethod(Invocation.method(#insertWatchlist, [tv]),
           returnValue: Future<int>.value(0)) as _i7.Future<int>);
-  @override
+
   _i7.Future<int> removeWatchlist(_i14.TvTable? tv) =>
       (super.noSuchMethod(Invocation.method(#removeWatchlist, [tv]),
           returnValue: Future<int>.value(0)) as _i7.Future<int>);

@@ -1,5 +1,4 @@
-import 'package:TV_Series/presentation/pages/home_movie_page.dart';
-import 'package:TV_Series/presentation/pages/home_tv_page.dart';
+
 import 'package:flutter/material.dart';
 
 class MainHome extends StatelessWidget{

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:TV_Series/domain/entities/tv.dart';
-import 'package:TV_Series/domain/entities/tv_detail.dart';
-import 'package:TV_Series/common/failure.dart';
+import 'package:tv_series/domain/entities/tv.dart';
+import 'package:tv_series/domain/entities/tv_detail.dart';
+import 'package:tv_series/common/failure.dart';
 
 abstract class TvRepository {
   Future<Either<Failure, List<Tv>>> getNowPlayingTv();
@@ -10,8 +10,8 @@ abstract class TvRepository {
   Future<Either<Failure, TvDetail>> getTvDetail(int id);
   Future<Either<Failure, List<Tv>>> getTvRecommendations(int id);
   Future<Either<Failure, List<Tv>>> searchTv(String query);
-  Future<Either<Failure, String>> saveWatchlist(TvDetail tv);
-  Future<Either<Failure, String>> removeWatchlist(TvDetail tv);
-  Future<bool> isAddedToWatchlist(int id);
+  Future<Either<Failure, String>> saveWatchlistTv(TvDetail tv);
+  Future<Either<Failure, String>> removeWatchlistTv(TvDetail tv);
+  Future<bool> isAddedToWatchlistTv(int id);
   Future<Either<Failure, List<Tv>>> getWatchlistTv();
 }

@@ -1,15 +1,15 @@
 import 'dart:async';
 
-import 'package:TV_Series/data/models/movie_table.dart';
+import 'package:tv_series/data/models/movie_table.dart';
 import 'package:sqflite/sqflite.dart';
 
-class DatabaseHelper {
-  static DatabaseHelper? _databaseHelper;
-  DatabaseHelper._instance() {
-    _databaseHelper = this;
+class DatabaseHelperMovie {
+  static DatabaseHelperMovie? _databaseHelperMovie;
+  DatabaseHelperMovie._instance() {
+    _databaseHelperMovie = this;
   }
 
-  factory DatabaseHelper() => _databaseHelper ?? DatabaseHelper._instance();
+  factory DatabaseHelperMovie() => _databaseHelperMovie ?? DatabaseHelperMovie._instance();
 
   static Database? _database;
 
@@ -41,12 +41,12 @@ class DatabaseHelper {
     ''');
   }
 
-  Future<int> insertWatchlist(MovieTable movie) async {
+  Future<int> insertWatchlistMovie(MovieTable movie) async {
     final db = await database;
     return await db!.insert(_tblWatchlist, movie.toJson());
   }
 
-  Future<int> removeWatchlist(MovieTable movie) async {
+  Future<int> removeWatchlistMovie(MovieTable movie) async {
     final db = await database;
     return await db!.delete(
       _tblWatchlist,

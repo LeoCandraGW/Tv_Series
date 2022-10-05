@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:TV_Series/data/datasources/tv_remote_data_source.dart';
-import 'package:TV_Series/data/models/tv_detail_model.dart';
-import 'package:TV_Series/data/models/tv_response.dart';
-import 'package:TV_Series/common/exception.dart';
+import 'package:tv_series/data/datasources/tv_remote_data_source.dart';
+import 'package:tv_series/data/models/tv_detail_model.dart';
+import 'package:tv_series/data/models/tv_response.dart';
+import 'package:tv_series/common/exception.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/mockito.dart';

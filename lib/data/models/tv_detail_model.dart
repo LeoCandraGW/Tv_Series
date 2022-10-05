@@ -1,5 +1,5 @@
-import 'package:TV_Series/data/models/genre_model.dart';
-import 'package:TV_Series/domain/entities/tv_detail.dart';
+import 'package:tv_series/data/models/genre_model.dart';
+import 'package:tv_series/domain/entities/tv_detail.dart';
 import 'package:equatable/equatable.dart';
 
 class TvModelDetail extends Equatable {

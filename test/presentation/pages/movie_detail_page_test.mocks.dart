@@ -5,15 +5,15 @@
 import 'dart:async' as _i11;
 import 'dart:ui' as _i12;
 
-import 'package:TV_Series/common/state_enum.dart' as _i9;
-import 'package:TV_Series/domain/entities/tv.dart' as _i10;
-import 'package:TV_Series/domain/entities/tv_detail.dart' as _i7;
-import 'package:TV_Series/domain/usecases/get_tv_detail.dart' as _i2;
-import 'package:TV_Series/domain/usecases/get_tv_recommendations.dart' as _i3;
-import 'package:TV_Series/domain/usecases/get_watchlist_status_tv.dart' as _i4;
-import 'package:TV_Series/domain/usecases/remove_watchlist_tv.dart' as _i6;
-import 'package:TV_Series/domain/usecases/save_watchlist_tv.dart' as _i5;
-import 'package:TV_Series/presentation/provider/tv_detail_notifier.dart'
+import 'package:tv_series/common/state_enum.dart' as _i9;
+import 'package:tv_series/domain/entities/tv.dart' as _i10;
+import 'package:tv_series/domain/entities/tv_detail.dart' as _i7;
+import 'package:tv_series/domain/usecases/get_tv_detail.dart' as _i2;
+import 'package:tv_series/domain/usecases/get_tv_recommendations.dart' as _i3;
+import 'package:tv_series/domain/usecases/get_watchlist_status_tv.dart' as _i4;
+import 'package:tv_series/domain/usecases/remove_watchlist_tv.dart' as _i6;
+import 'package:tv_series/domain/usecases/save_watchlist_tv.dart' as _i5;
+import 'package:tv_series/presentation/provider/tv_detail_notifier.dart'
     as _i8;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -29,11 +29,11 @@ class _FakeGetTvRecommendations extends _i1.Fake
     implements _i3.GetTvRecommendations {}
 
 class _FakeGetWatchListStatus extends _i1.Fake
-    implements _i4.GetWatchListStatus {}
+    implements _i4.GetWatchListStatusTv {}
 
-class _FakeSaveWatchlist extends _i1.Fake implements _i5.SaveWatchlist {}
+class _FakeSaveWatchlist extends _i1.Fake implements _i5.SaveWatchlistTv {}
 
-class _FakeRemoveWatchlist extends _i1.Fake implements _i6.RemoveWatchlist {}
+class _FakeRemoveWatchlist extends _i1.Fake implements _i6.RemoveWatchlistTv {}
 
 class _FakeTvDetail extends _i1.Fake implements _i7.TvDetail {}
 
@@ -55,18 +55,18 @@ class MockTvDetailNotifier extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#getTvRecommendations),
               returnValue: _FakeGetTvRecommendations())
           as _i3.GetTvRecommendations);
-  @override
-  _i4.GetWatchListStatus get getWatchListStatus =>
+
+  _i4.GetWatchListStatusTv get getWatchListStatus =>
       (super.noSuchMethod(Invocation.getter(#getWatchListStatus),
-          returnValue: _FakeGetWatchListStatus()) as _i4.GetWatchListStatus);
-  @override
-  _i5.SaveWatchlist get saveWatchlist =>
+          returnValue: _FakeGetWatchListStatus()) as _i4.GetWatchListStatusTv);
+
+  _i5.SaveWatchlistTv get saveWatchlist =>
       (super.noSuchMethod(Invocation.getter(#saveWatchlist),
-          returnValue: _FakeSaveWatchlist()) as _i5.SaveWatchlist);
-  @override
-  _i6.RemoveWatchlist get removeWatchlist =>
+          returnValue: _FakeSaveWatchlist()) as _i5.SaveWatchlistTv);
+
+  _i6.RemoveWatchlistTv get removeWatchlist =>
       (super.noSuchMethod(Invocation.getter(#removeWatchlist),
-          returnValue: _FakeRemoveWatchlist()) as _i6.RemoveWatchlist);
+          returnValue: _FakeRemoveWatchlist()) as _i6.RemoveWatchlistTv);
   @override
   _i7.TvDetail get tv => (super.noSuchMethod(Invocation.getter(#tv),
       returnValue: _FakeTvDetail()) as _i7.TvDetail);
@@ -86,11 +86,11 @@ class MockTvDetailNotifier extends _i1.Mock
   String get message =>
       (super.noSuchMethod(Invocation.getter(#message), returnValue: '')
           as String);
-  @override
+  
   bool get isAddedToWatchlist =>
       (super.noSuchMethod(Invocation.getter(#isAddedToWatchlist),
           returnValue: false) as bool);
-  @override
+
   String get watchlistMessage =>
       (super.noSuchMethod(Invocation.getter(#watchlistMessage), returnValue: '')
           as String);

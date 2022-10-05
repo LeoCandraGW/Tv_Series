@@ -1,6 +1,6 @@
-import 'package:TV_Series/common/state_enum.dart';
-import 'package:TV_Series/presentation/provider/top_rated_tv_notifier.dart';
-import 'package:TV_Series/presentation/widgets/tv_card_list.dart';
+import 'package:tv_series/common/state_enum.dart';
+import 'package:tv_series/presentation/provider/top_rated_tv_notifier.dart';
+import 'package:tv_series/presentation/widgets/tv_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

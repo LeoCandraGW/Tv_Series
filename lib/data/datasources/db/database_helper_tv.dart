@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:TV_Series/data/models/tv_table.dart';
+import 'package:tv_series/data/models/tv_table.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DatabaseHelper {
@@ -41,12 +41,12 @@ class DatabaseHelper {
     ''');
   }
 
-  Future<int> insertWatchlist(TvTable tv) async {
+  Future<int> insertWatchlistTv(TvTable tv) async {
     final db = await database;
     return await db!.insert(_tblWatchlist, tv.toJson());
   }
 
-  Future<int> removeWatchlist(TvTable tv) async {
+  Future<int> removeWatchlistTv(TvTable tv) async {
     final db = await database;
     return await db!.delete(
       _tblWatchlist,

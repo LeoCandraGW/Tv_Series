@@ -1,7 +1,7 @@
-import 'package:TV_Series/data/models/tv_table.dart';
-import 'package:TV_Series/domain/entities/genre.dart';
-import 'package:TV_Series/domain/entities/tv.dart';
-import 'package:TV_Series/domain/entities/tv_detail.dart';
+import 'package:tv_series/data/models/tv_table.dart';
+import 'package:tv_series/domain/entities/genre.dart';
+import 'package:tv_series/domain/entities/tv.dart';
+import 'package:tv_series/domain/entities/tv_detail.dart';
 
 final testTv = Tv(
   backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',

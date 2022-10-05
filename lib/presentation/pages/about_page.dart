@@ -1,4 +1,4 @@
-import 'package:TV_Series/common/constants.dart';
+import 'package:tv_series/common/constants.dart';
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
