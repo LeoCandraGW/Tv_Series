@@ -1,7 +1,7 @@
-import 'package:TV_Series/common/constants.dart';
-import 'package:TV_Series/common/state_enum.dart';
-import 'package:TV_Series/presentation/provider/movie_search_notifier.dart';
-import 'package:TV_Series/presentation/widgets/movie_card_list.dart';
+import 'package:tv_series/common/constants.dart';
+import 'package:tv_series/common/state_enum.dart';
+import 'package:tv_series/presentation/provider/movie_search_notifier.dart';
+import 'package:tv_series/presentation/widgets/movie_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
