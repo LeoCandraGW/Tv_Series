@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 class MainHome extends StatelessWidget{
+  static const ROUTE_NAME = '/mainhome';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

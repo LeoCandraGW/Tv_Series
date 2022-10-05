@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:tv_series/common/constants.dart';
 import 'package:tv_series/domain/entities/movie.dart';
 import 'package:tv_series/presentation/pages/about_page.dart';
+import 'package:tv_series/presentation/pages/main_home.dart';
 import 'package:tv_series/presentation/pages/movie_detail_page.dart';
 import 'package:tv_series/presentation/pages/popular_movies_page.dart';
 import 'package:tv_series/presentation/pages/search_movie_page.dart';
@@ -61,6 +62,13 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               },
               leading: Icon(Icons.info_outline),
               title: Text('About'),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, MainHome.ROUTE_NAME);
+              },
+              leading: Icon(Icons.arrow_back_ios_new_outlined),
+              title: Text('Home'),
             ),
           ],
         ),

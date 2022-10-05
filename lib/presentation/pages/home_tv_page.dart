@@ -12,6 +12,8 @@ import 'package:tv_series/common/state_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'main_home.dart';
+
 class HomeTvPage extends StatefulWidget {
   @override
   _HomeTvPageState createState() => _HomeTvPageState();
@@ -61,6 +63,13 @@ class _HomeTvPageState extends State<HomeTvPage> {
               },
               leading: Icon(Icons.info_outline),
               title: Text('About'),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, MainHome.ROUTE_NAME);
+              },
+              leading: Icon(Icons.arrow_back_ios_new_outlined),
+              title: Text('Home'),
             ),
           ],
         ),
