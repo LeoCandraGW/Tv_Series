@@ -52,7 +52,7 @@ class TvDetail extends Equatable {
 
   @override
   List<Object?> get props => [
-        adult,
+       adult,
        backdropPath,
        episodeRunTime,
        firstAirDate,
