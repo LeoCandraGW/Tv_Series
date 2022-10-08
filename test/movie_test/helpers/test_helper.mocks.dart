@@ -106,8 +106,8 @@ class MockMovieRepository extends _i1.Mock implements _i6.MovieRepository {
       (super.noSuchMethod(Invocation.method(#isAddedToWatchlistMovie, [id]),
           returnValue: Future<bool>.value(false)) as _i7.Future<bool>);
 
-  _i7.Future<_i2.Either<_i8.Failure, List<_i9.Movie>>> getWatchlistMovie() =>
-      (super.noSuchMethod(Invocation.method(#getWatchlistMovie, []),
+  _i7.Future<_i2.Either<_i8.Failure, List<_i9.Movie>>> getWatchlistMovies() =>
+      (super.noSuchMethod(Invocation.method(#getWatchlistMovies, []),
           returnValue: Future<_i2.Either<_i8.Failure, List<_i9.Movie>>>.value(
               _FakeEither<_i8.Failure, List<_i9.Movie>>())) as _i7
           .Future<_i2.Either<_i8.Failure, List<_i9.Movie>>>);
@@ -181,8 +181,8 @@ class MockMovieLocalDataSource extends _i1.Mock
               returnValue: Future<_i14.MovieTable?>.value())
           as _i7.Future<_i14.MovieTable?>);
   
-  _i7.Future<List<_i14.MovieTable>> getWatchlistMovie() => (super.noSuchMethod(
-          Invocation.method(#getWatchlistMovie, []),
+  _i7.Future<List<_i14.MovieTable>> getWatchlistMovies() => (super.noSuchMethod(
+          Invocation.method(#getWatchlistMovies, []),
           returnValue: Future<List<_i14.MovieTable>>.value(<_i14.MovieTable>[]))
       as _i7.Future<List<_i14.MovieTable>>);
 }
@@ -214,8 +214,8 @@ class MockDatabaseHelperMovie extends _i1.Mock implements _i15.DatabaseHelperMov
               returnValue: Future<Map<String, dynamic>?>.value())
           as _i7.Future<Map<String, dynamic>?>);
 
-  _i7.Future<List<Map<String, dynamic>>> getWatchlistMovie() =>
-      (super.noSuchMethod(Invocation.method(#getWatchlistMovie, []),
+  _i7.Future<List<Map<String, dynamic>>> getWatchlistMovies() =>
+      (super.noSuchMethod(Invocation.method(#getWatchlistMovies, []),
               returnValue: Future<List<Map<String, dynamic>>>.value(
                   <Map<String, dynamic>>[]))
           as _i7.Future<List<Map<String, dynamic>>>);

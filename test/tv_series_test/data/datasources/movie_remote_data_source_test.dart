@@ -27,7 +27,7 @@ void main() {
     final tTvList = TvResponse.fromJson(
             json.decode(readJson('dummy_data/now_playing.json')))
         .tvList;
-
+  
     test('should return list of Tv Model when the response code is 200',
         () async {
       // arrange

@@ -28,12 +28,12 @@ class _FakeGetTvDetail extends _i1.Fake implements _i2.GetTvDetail {}
 class _FakeGetTvRecommendations extends _i1.Fake
     implements _i3.GetTvRecommendations {}
 
-class _FakeGetWatchListStatus extends _i1.Fake
+class _FakeGetWatchListStatusTv extends _i1.Fake
     implements _i4.GetWatchListStatusTv {}
 
-class _FakeSaveWatchlist extends _i1.Fake implements _i5.SaveWatchlistTv {}
+class _FakeSaveWatchlistTv extends _i1.Fake implements _i5.SaveWatchlistTv {}
 
-class _FakeRemoveWatchlist extends _i1.Fake implements _i6.RemoveWatchlistTv {}
+class _FakeRemoveWatchlistTv extends _i1.Fake implements _i6.RemoveWatchlistTv {}
 
 class _FakeTvDetail extends _i1.Fake implements _i7.TvDetail {}
 
@@ -56,17 +56,17 @@ class MockTvDetailNotifier extends _i1.Mock
               returnValue: _FakeGetTvRecommendations())
           as _i3.GetTvRecommendations);
 
-  _i4.GetWatchListStatusTv get getWatchListStatus =>
+  _i4.GetWatchListStatusTv get getWatchListStatusTv =>
       (super.noSuchMethod(Invocation.getter(#getWatchListStatus),
-          returnValue: _FakeGetWatchListStatus()) as _i4.GetWatchListStatusTv);
+          returnValue: _FakeGetWatchListStatusTv()) as _i4.GetWatchListStatusTv);
 
-  _i5.SaveWatchlistTv get saveWatchlist =>
+  _i5.SaveWatchlistTv get saveWatchlistTv =>
       (super.noSuchMethod(Invocation.getter(#saveWatchlist),
-          returnValue: _FakeSaveWatchlist()) as _i5.SaveWatchlistTv);
+          returnValue: _FakeSaveWatchlistTv()) as _i5.SaveWatchlistTv);
 
-  _i6.RemoveWatchlistTv get removeWatchlist =>
+  _i6.RemoveWatchlistTv get removeWatchlistTv =>
       (super.noSuchMethod(Invocation.getter(#removeWatchlist),
-          returnValue: _FakeRemoveWatchlist()) as _i6.RemoveWatchlistTv);
+          returnValue: _FakeRemoveWatchlistTv()) as _i6.RemoveWatchlistTv);
   @override
   _i7.TvDetail get tv => (super.noSuchMethod(Invocation.getter(#tv),
       returnValue: _FakeTvDetail()) as _i7.TvDetail);
@@ -87,7 +87,7 @@ class MockTvDetailNotifier extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#message), returnValue: '')
           as String);
   
-  bool get isAddedToWatchlist =>
+  bool get isAddedToWatchlistTv =>
       (super.noSuchMethod(Invocation.getter(#isAddedToWatchlist),
           returnValue: false) as bool);
 
@@ -103,18 +103,18 @@ class MockTvDetailNotifier extends _i1.Mock
       (super.noSuchMethod(Invocation.method(#fetchTvDetail, [id]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i11.Future<void>);
-  @override
-  _i11.Future<void> addWatchlist(_i7.TvDetail? tv) =>
+
+  _i11.Future<void> addWatchlistTv(_i7.TvDetail? tv) =>
       (super.noSuchMethod(Invocation.method(#addWatchlist, [tv]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i11.Future<void>);
-  @override
-  _i11.Future<void> removeFromWatchlist(_i7.TvDetail? tv) =>
+  
+  _i11.Future<void> removeFromWatchlistTv(_i7.TvDetail? tv) =>
       (super.noSuchMethod(Invocation.method(#removeFromWatchlist, [tv]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i11.Future<void>);
-  @override
-  _i11.Future<void> loadWatchlistStatus(int? id) =>
+
+  _i11.Future<void> loadWatchlistStatusTv(int? id) =>
       (super.noSuchMethod(Invocation.method(#loadWatchlistStatus, [id]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i11.Future<void>);

@@ -62,5 +62,5 @@ final testTvMap = {
   'id': 1,
   'overview': 'overview',
   'posterPath': 'posterPath',
-  'title': 'title',
+  'name': 'name',
 };
