@@ -12,7 +12,7 @@ void main() {
     popularity: 1,
     posterPath: 'posterPath',
     name: 'name',
-    voteAverage: 1,
+    voteAverage: 1.1,
     voteCount: 1,
   );
 
@@ -25,7 +25,7 @@ void main() {
     popularity: 1,
     posterPath: 'posterPath',
     name: 'name',
-    voteAverage: 1,
+    voteAverage: 1.1,
     voteCount: 1,
   );
 

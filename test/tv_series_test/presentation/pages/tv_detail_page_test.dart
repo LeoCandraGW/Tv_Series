@@ -9,7 +9,7 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 
 import '../../dummy_data/dummy_objects.dart';
-import 'movie_detail_page_test.mocks.dart';
+import 'tv_detail_page_test.mocks.dart';
 
 @GenerateMocks([TvDetailNotifier])
 void main() {
@@ -35,7 +35,7 @@ void main() {
     when(mockNotifier.tv).thenReturn(testTvDetail);
     when(mockNotifier.recommendationState).thenReturn(RequestState.Loaded);
     when(mockNotifier.tvRecommendations).thenReturn(<Tv>[]);
-    when(mockNotifier.isAddedToWatchlistTv).thenReturn(false);
+    when(mockNotifier.isAddedToWatchlisto).thenReturn(false);
 
     final watchlistButtonIcon = find.byIcon(Icons.add);
 
@@ -51,7 +51,7 @@ void main() {
     when(mockNotifier.tv).thenReturn(testTvDetail);
     when(mockNotifier.recommendationState).thenReturn(RequestState.Loaded);
     when(mockNotifier.tvRecommendations).thenReturn(<Tv>[]);
-    when(mockNotifier.isAddedToWatchlistTv).thenReturn(true);
+    when(mockNotifier.isAddedToWatchlisto).thenReturn(true);
 
     final watchlistButtonIcon = find.byIcon(Icons.check);
 
@@ -67,8 +67,8 @@ void main() {
     when(mockNotifier.tv).thenReturn(testTvDetail);
     when(mockNotifier.recommendationState).thenReturn(RequestState.Loaded);
     when(mockNotifier.tvRecommendations).thenReturn(<Tv>[]);
-    when(mockNotifier.isAddedToWatchlistTv).thenReturn(false);
-    when(mockNotifier.watchlistMessage).thenReturn('Added to Watchlist');
+    when(mockNotifier.isAddedToWatchlisto).thenReturn(false);
+    when(mockNotifier.watchlistoMessage).thenReturn('Added to Watchlist');
 
     final watchlistButton = find.byType(ElevatedButton);
 
@@ -90,8 +90,8 @@ void main() {
     when(mockNotifier.tv).thenReturn(testTvDetail);
     when(mockNotifier.recommendationState).thenReturn(RequestState.Loaded);
     when(mockNotifier.tvRecommendations).thenReturn(<Tv>[]);
-    when(mockNotifier.isAddedToWatchlistTv).thenReturn(false);
-    when(mockNotifier.watchlistMessage).thenReturn('Failed');
+    when(mockNotifier.isAddedToWatchlisto).thenReturn(false);
+    when(mockNotifier.watchlistoMessage).thenReturn('Failed');
 
     final watchlistButton = find.byType(ElevatedButton);
 

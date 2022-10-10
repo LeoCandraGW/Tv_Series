@@ -13,7 +13,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../dummy_data/dummy_objects.dart';
-import 'movie_detail_notifier_test.mocks.dart';
+import 'tv_detail_notifier_test.mocks.dart';
 
 @GenerateMocks([
   GetTvDetail,
@@ -112,7 +112,7 @@ void main() {
       await provider.fetchTvDetail(tId);
       // assert
       expect(provider.tvState, RequestState.Loaded);
-      expect(provider.tvRecommendations, tTv);
+      expect(provider.tvRecommendations, tTvs);
     });
   });
 
@@ -124,7 +124,7 @@ void main() {
       await provider.fetchTvDetail(tId);
       // assert
       verify(mockGetTvRecommendations.execute(tId));
-      expect(provider.tvRecommendations, tTv);
+      expect(provider.tvRecommendations, tTvs);
     });
 
     test('should update recommendation state when data is gotten successfully',
@@ -135,7 +135,7 @@ void main() {
       await provider.fetchTvDetail(tId);
       // assert
       expect(provider.recommendationState, RequestState.Loaded);
-      expect(provider.tvRecommendations, tTv);
+      expect(provider.tvRecommendations, tTvs);
     });
 
     test('should update error message when request in successful', () async {

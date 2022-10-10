@@ -87,12 +87,12 @@ class MockTvDetailNotifier extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#message), returnValue: '')
           as String);
   
-  bool get isAddedToWatchlistTv =>
+  bool get isAddedToWatchlisto =>
       (super.noSuchMethod(Invocation.getter(#isAddedToWatchlist),
           returnValue: false) as bool);
 
-  String get watchlistMessage =>
-      (super.noSuchMethod(Invocation.getter(#watchlistMessage), returnValue: '')
+  String get watchlistoMessage =>
+      (super.noSuchMethod(Invocation.getter(#watchlistoMessage), returnValue: '')
           as String);
   @override
   bool get hasListeners =>
@@ -104,7 +104,7 @@ class MockTvDetailNotifier extends _i1.Mock
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i11.Future<void>);
 
-  _i11.Future<void> addWatchlistTv(_i7.TvDetail? tv) =>
+  _i11.Future<void> addWatchlist(_i7.TvDetail? tv) =>
       (super.noSuchMethod(Invocation.method(#addWatchlist, [tv]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i11.Future<void>);
@@ -114,7 +114,7 @@ class MockTvDetailNotifier extends _i1.Mock
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i11.Future<void>);
 
-  _i11.Future<void> loadWatchlistStatusTv(int? id) =>
+  _i11.Future<void> loadWatchlistStatus(int? id) =>
       (super.noSuchMethod(Invocation.method(#loadWatchlistStatus, [id]),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i11.Future<void>);

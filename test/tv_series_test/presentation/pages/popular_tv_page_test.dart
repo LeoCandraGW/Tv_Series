@@ -8,7 +8,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 
-import 'popular_movies_page_test.mocks.dart';
+import 'popular_tv_page_test.mocks.dart';
 
 @GenerateMocks([PopularTvNotifier])
 void main() {
