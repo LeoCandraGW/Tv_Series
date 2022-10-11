@@ -6,6 +6,7 @@ import 'package:tv_series/presentation/pages/tv_detail_page.dart';
 import 'package:tv_series/presentation/pages/popular_tv_page.dart';
 import 'package:tv_series/presentation/pages/search_tv_page.dart';
 import 'package:tv_series/presentation/pages/top_rated_tv_page.dart';
+import 'package:tv_series/presentation/pages/tv_page.dart';
 import 'package:tv_series/presentation/pages/watchlist_tv_page.dart';
 import 'package:tv_series/presentation/provider/tv_list_notifier.dart';
 import 'package:tv_series/common/state_enum.dart';
@@ -91,9 +92,10 @@ class _HomeTvPageState extends State<HomeTvPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Now Playing',
-                style: kHeading6,
+              _buildSubHeading(
+                title: 'Tv Series',
+                onTap: () =>
+                    Navigator.pushNamed(context, TvPage.ROUTE_NAME),
               ),
               Consumer<TvListNotifier>(builder: (context, data, child) {
                 final state = data.nowPlayingState;

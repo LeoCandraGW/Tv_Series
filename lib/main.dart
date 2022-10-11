@@ -3,11 +3,13 @@ import 'package:tv_series/common/utils.dart';
 import 'package:tv_series/presentation/pages/about_page.dart';
 import 'package:tv_series/presentation/pages/home_movie_page.dart';
 import 'package:tv_series/presentation/pages/main_home.dart';
+import 'package:tv_series/presentation/pages/movies_page.dart';
 import 'package:tv_series/presentation/pages/tv_detail_page.dart';
 import 'package:tv_series/presentation/pages/home_tv_page.dart';
 import 'package:tv_series/presentation/pages/popular_tv_page.dart';
 import 'package:tv_series/presentation/pages/search_tv_page.dart';
 import 'package:tv_series/presentation/pages/top_rated_tv_page.dart';
+import 'package:tv_series/presentation/pages/tv_page.dart';
 import 'package:tv_series/presentation/pages/watchlist_tv_page.dart';
 import 'package:tv_series/presentation/provider/tv_detail_notifier.dart';
 import 'package:tv_series/presentation/provider/tv_list_notifier.dart';
@@ -115,6 +117,10 @@ class MyApp extends StatelessWidget {
               return CupertinoPageRoute(builder: (_) => PopularMoviesPage());
             case TopRatedMoviesPage.ROUTE_NAME:
               return CupertinoPageRoute(builder: (_) => TopRatedMoviesPage());
+            case MoviesPage.ROUTE_NAME:
+              return CupertinoPageRoute(builder: (_) => MoviesPage());
+            case TvPage.ROUTE_NAME:
+              return CupertinoPageRoute(builder: (_) => TvPage());
             case MovieDetailPage.ROUTE_NAME:
               final id = settings.arguments as int;
               return MaterialPageRoute(

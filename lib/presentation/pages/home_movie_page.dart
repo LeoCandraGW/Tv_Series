@@ -4,6 +4,7 @@ import 'package:tv_series/domain/entities/movie.dart';
 import 'package:tv_series/presentation/pages/about_page.dart';
 import 'package:tv_series/presentation/pages/main_home.dart';
 import 'package:tv_series/presentation/pages/movie_detail_page.dart';
+import 'package:tv_series/presentation/pages/movies_page.dart';
 import 'package:tv_series/presentation/pages/popular_movies_page.dart';
 import 'package:tv_series/presentation/pages/search_movie_page.dart';
 import 'package:tv_series/presentation/pages/top_rated_movies_page.dart';
@@ -90,9 +91,10 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Now Playing',
-                style: kHeading6,
+               _buildSubHeading(
+                title: 'Now Playing',
+                onTap: () =>
+                    Navigator.pushNamed(context, MoviesPage.ROUTE_NAME),
               ),
               Consumer<MovieListNotifier>(builder: (context, data, child) {
                 final state = data.nowPlayingState;
