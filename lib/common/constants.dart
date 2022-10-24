@@ -7,7 +7,7 @@ const String BASE_IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 const Color kRichBlack = Color(0xFF000814);
 const Color kOxfordBlue = Color(0xFF001D3D);
 const Color kPrussianBlue = Color(0xFF003566);
-const Color kMikadoYellow = Color(0xFFffc300);
+const Color kMikadoBlue = Color.fromARGB(255, 0, 132, 255);
 const Color kDavysGrey = Color(0xFF4B5358);
 const Color kGrey = Color(0xFF303030);
 
@@ -30,8 +30,8 @@ final kTextTheme = TextTheme(
 );
 
 const kColorScheme = ColorScheme(
-  primary: kMikadoYellow,
-  primaryContainer: kMikadoYellow,
+  primary: kMikadoBlue,
+  primaryContainer: kMikadoBlue,
   secondary: kPrussianBlue,
   secondaryContainer: kPrussianBlue,
   surface: kRichBlack,
