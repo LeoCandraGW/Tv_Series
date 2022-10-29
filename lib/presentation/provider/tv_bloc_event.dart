@@ -31,18 +31,18 @@ class FetchTvRecommendation extends TvEvent {
 
 class FetchWatchListTv extends TvEvent {}
 
-class SaveWatchlistTv extends TvEvent {
+class SaveWatchlistTvs extends TvEvent {
   final TvDetail tv;
 
-  const SaveWatchlistTv(this.tv);
+  const SaveWatchlistTvs(this.tv);
   @override
   List<Object> get props => [tv];
 }
 
-class RemoveWatchlistTv extends TvEvent {
+class RemoveWatchlistTvs extends TvEvent {
   final TvDetail tv;
 
-  const RemoveWatchlistTv(this.tv);
+  const RemoveWatchlistTvs(this.tv);
   @override
   List<Object> get props => [tv];
 }

@@ -9,13 +9,13 @@ import 'package:equatable/equatable.dart';
 
 import 'package:rxdart/rxdart.dart';
 
-part 'search_movies_event.dart';
-part 'search_movies_state.dart';
+part 'search_event.dart';
+part 'search_state.dart';
 
-class SearchMoviesBloc extends Bloc<SearchEvent, SearchState> {
+class SearchMovieBloc extends Bloc<SearchEvent, SearchState> {
   final SearchMovies _searchMovies;
 
-  SearchMoviesBloc(this._searchMovies) : super(SearchEmpty()) {
+  SearchMovieBloc(this._searchMovies) : super(SearchEmpty()) {
     on<OnMovieQueryChanged>(
       (event, emit) async {
         final query = event.query;

@@ -1,5 +1,6 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tv_series/common/state_enum.dart';
-import 'package:tv_series/presentation/provider/tv_list_notifier.dart';
+import 'package:tv_series/presentation/provider/tv_bloc.dart';
 import 'package:tv_series/presentation/widgets/tv_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,9 +16,8 @@ class _TvPageState extends State<TvPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<TvListNotifier>(context, listen: false)
-            .fetchNowPlayingTv());
+    Future.microtask(
+      () => context.read<NowPlayingTvBloc>().add(FetchNowplayingTv()));
   }
 
   @override
@@ -28,25 +28,27 @@ class _TvPageState extends State<TvPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Consumer<TvListNotifier>(
-          builder: (context, data, child) {
-            if (data.nowPlayingState == RequestState.Loading) {
+        child: BlocBuilder<NowPlayingTvBloc, TvState>(
+          builder: (context, state) {
+            if (state is TvLoading) {
               return Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.nowPlayingState == RequestState.Loaded) {
+            } else if (state is TvHasData) {
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  final tvs = data.nowPlayingTv[index];
+                  final tvs = state.tvs[index];
                   return TvCard(tvs);
                 },
-                itemCount: data.nowPlayingTv.length,
+                itemCount: state.tvs.length,
               );
-            } else {
+            } else if (state is TvHasError){
               return Center(
                 key: Key('error_message'),
-                child: Text(data.message),
+                child: Text(state.message),
               );
+            } else {
+              return Text('Data Tidak Ada');
             }
           },
         ),

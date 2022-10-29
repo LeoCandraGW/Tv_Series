@@ -1,6 +1,7 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tv_series/common/constants.dart';
 import 'package:tv_series/common/state_enum.dart';
-import 'package:tv_series/presentation/provider/movie_search_notifier.dart';
+import 'package:tv_series/presentation/provider/search_bloc.dart';
 import 'package:tv_series/presentation/widgets/movie_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,8 +22,7 @@ class SearchPageMovie extends StatelessWidget {
           children: [
             TextField(
               onSubmitted: (query) {
-                Provider.of<MovieSearchNotifier>(context, listen: false)
-                    .fetchMovieSearch(query);
+                context.read<SearchMovieBloc>().add(OnMovieQueryChanged(query));
               },
               decoration: InputDecoration(
                 hintText: 'Search movie title',
@@ -36,28 +36,28 @@ class SearchPageMovie extends StatelessWidget {
               'Search Result',
               style: kHeading6,
             ),
-            Consumer<MovieSearchNotifier>(
-              builder: (context, data, child) {
-                if (data.state == RequestState.Loading) {
+            BlocBuilder<SearchMovieBloc, SearchState>(
+              builder: (context, state) {
+                if (state is SearchLoading) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (data.state == RequestState.Loaded) {
-                  final result = data.searchResult;
+                } else if (state is SearchMovieHasData) {
+                  final result = state.result;
                   return Expanded(
                     child: ListView.builder(
                       padding: const EdgeInsets.all(8),
                       itemBuilder: (context, index) {
-                        final movie = data.searchResult[index];
+                        final movie = state.result[index];
                         return MovieCard(movie);
                       },
                       itemCount: result.length,
                     ),
                   );
+                } else if (state is SearchError){
+                  return Text(state.message);
                 } else {
-                  return Expanded(
-                    child: Container(),
-                  );
+                  return Text('Data Tidak Ada');
                 }
               },
             ),

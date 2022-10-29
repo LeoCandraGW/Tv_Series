@@ -75,10 +75,10 @@ class TvDetailBloc extends Bloc<TvEvent, TvState> {
   }
 }
 
-class RecommendationsTvBloc extends Bloc<TvEvent, TvState> {
+class RecommendationTvBloc extends Bloc<TvEvent, TvState> {
   final GetTvRecommendations _getTvRecommendations;
 
-  RecommendationsTvBloc(this._getTvRecommendations) : super(TvEmpty()) {
+  RecommendationTvBloc(this._getTvRecommendations) : super(TvEmpty()) {
     on<FetchTvRecommendation>((event, emit) async {
       emit(TvLoading());
       final result = await _getTvRecommendations.execute(event.id);
@@ -113,7 +113,7 @@ class WatchlistTvBloc extends Bloc<TvEvent, TvState> {
       });
     });
 
-    on<SaveWatchlistTv>((event, emit) async {
+    on<SaveWatchlistTvs>((event, emit) async {
       final tvmodel = event.tv;
       emit(TvLoading());
       final result = await _saveWatchlistTv.execute(tvmodel);
@@ -122,7 +122,7 @@ class WatchlistTvBloc extends Bloc<TvEvent, TvState> {
           (r) => emit(WatchlistTvMessage(r)));
     });
 
-    on<RemoveWatchlistTv>((event, emit) async {
+    on<RemoveWatchlistTvs>((event, emit) async {
       final tv = event.tv;
       emit(TvLoading());
       final result = await _removeWatchlistTv.execute(tv);

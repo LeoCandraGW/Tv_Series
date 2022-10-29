@@ -1,5 +1,6 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tv_series/common/state_enum.dart';
-import 'package:tv_series/presentation/provider/movie_list_notifier.dart';
+import 'package:tv_series/presentation/provider/movie_bloc.dart';
 import 'package:tv_series/presentation/widgets/movie_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,9 +16,8 @@ class _MoviesPageState extends State<MoviesPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<MovieListNotifier>(context, listen: false)
-            .fetchNowPlayingMovies());
+    Future.microtask(
+      () => context.read<NowPlayingMovieBloc>().add(FetchNowPlayingMovies()));
   }
 
   @override
@@ -28,25 +28,27 @@ class _MoviesPageState extends State<MoviesPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Consumer<MovieListNotifier>(
-          builder: (context, data, child) {
-            if (data.nowPlayingState == RequestState.Loading) {
+        child: BlocBuilder<NowPlayingMovieBloc, MovieBlocState>(
+          builder: (context, state) {
+            if (state is MoviesLoading) {
               return Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.nowPlayingState == RequestState.Loaded) {
+            } else if (state is MoviesHasData) {
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  final movie = data.nowPlayingMovies[index];
+                  final movie = state.movies[index];
                   return MovieCard(movie);
                 },
-                itemCount: data.nowPlayingMovies.length,
+                itemCount: state.movies.length,
               );
-            } else {
+            } else if (state is MoviesHasError){
               return Center(
                 key: Key('error_message'),
-                child: Text(data.message),
+                child: Text(state.message),
               );
+            } else {
+              return Text('Data Tidak Ada');
             }
           },
         ),

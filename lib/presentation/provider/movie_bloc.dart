@@ -15,10 +15,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part 'movie_event.dart';
 part 'movie_state.dart';
 
-class NowPlayingMoviesBloc extends Bloc<MovieBlocEvent, MovieBlocState> {
+class NowPlayingMovieBloc extends Bloc<MovieBlocEvent, MovieBlocState> {
   final GetNowPlayingMovies _getNowPlayingMovies;
 
-  NowPlayingMoviesBloc(this._getNowPlayingMovies) : super(MoviesLoading()) {
+  NowPlayingMovieBloc(this._getNowPlayingMovies) : super(MoviesLoading()) {
     on<FetchNowPlayingMovies>((event, emit) async {
       emit(MoviesLoading());
       final result = await _getNowPlayingMovies.execute();
@@ -31,10 +31,10 @@ class NowPlayingMoviesBloc extends Bloc<MovieBlocEvent, MovieBlocState> {
   }
 }
 
-class PopularMoviesBloc extends Bloc<MovieBlocEvent, MovieBlocState> {
+class PopularMovieBloc extends Bloc<MovieBlocEvent, MovieBlocState> {
   final GetPopularMovies _getPopularMovies;
 
-  PopularMoviesBloc(this._getPopularMovies) : super(MoviesLoading()) {
+  PopularMovieBloc(this._getPopularMovies) : super(MoviesLoading()) {
     on<FetchPopularMovies>((event, emit) async {
       emit(MoviesLoading());
       final result = await _getPopularMovies.execute();
@@ -47,10 +47,10 @@ class PopularMoviesBloc extends Bloc<MovieBlocEvent, MovieBlocState> {
   }
 }
 
-class TopRatedMoviesBloc extends Bloc<MovieBlocEvent, MovieBlocState> {
+class TopRatedMovieBloc extends Bloc<MovieBlocEvent, MovieBlocState> {
   final GetTopRatedMovies _getTopRatedMovies;
 
-  TopRatedMoviesBloc(this._getTopRatedMovies) : super(MoviesLoading()) {
+  TopRatedMovieBloc(this._getTopRatedMovies) : super(MoviesLoading()) {
     on<FetchTopRatedMovies>((event, emit) async {
       emit(MoviesLoading());
       final result = await _getTopRatedMovies.execute();
@@ -97,7 +97,7 @@ class RecommendationMovieBloc extends Bloc<MovieBlocEvent, MovieBlocState> {
   }
 }
 
-class WatchListBloc extends Bloc<MovieBlocEvent, MovieBlocState> {
+class WatchListMovieBloc extends Bloc<MovieBlocEvent, MovieBlocState> {
   final GetWatchlistMovies _getWatchlistMovies;
   final GetWatchListStatusMovie _getWatchListStatusMovie;
   final SaveWatchlistMovie _saveWatchlistMovie;
@@ -106,7 +106,7 @@ class WatchListBloc extends Bloc<MovieBlocEvent, MovieBlocState> {
   static const watchlistAddSuccessMessage = 'Added to Watchlist';
   static const watchlistRemoveSuccessMessage = 'Removed from Watchlist';
 
-  WatchListBloc(this._getWatchlistMovies, this._getWatchListStatusMovie,
+  WatchListMovieBloc(this._getWatchlistMovies, this._getWatchListStatusMovie,
       this._saveWatchlistMovie, this._removeWatchlistMovie)
       : super(MoviesEmpty()) {
     on<FetchWatchlistMovies>(

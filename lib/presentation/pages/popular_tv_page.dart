@@ -1,5 +1,6 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tv_series/common/state_enum.dart';
-import 'package:tv_series/presentation/provider/popular_tv_notifier.dart';
+import 'package:tv_series/presentation/provider/tv_bloc.dart';
 import 'package:tv_series/presentation/widgets/tv_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,9 +16,8 @@ class _PopularTvPageState extends State<PopularTvPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<PopularTvNotifier>(context, listen: false)
-            .fetchPopularTv());
+    Future.microtask(
+      () => context.read<PopularTvBloc>().add(FetchPopularTv()));
   }
 
   @override
@@ -28,25 +28,27 @@ class _PopularTvPageState extends State<PopularTvPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Consumer<PopularTvNotifier>(
-          builder: (context, data, child) {
-            if (data.state == RequestState.Loading) {
+        child: BlocBuilder<PopularTvBloc, TvState>(
+          builder: (context, state) {
+            if (state is TvLoading) {
               return Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.state == RequestState.Loaded) {
+            } else if (state is TvHasData) {
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  final tvs = data.tv[index];
+                  final tvs = state.tvs[index];
                   return TvCard(tvs);
                 },
-                itemCount: data.tv.length,
+                itemCount: state.tvs.length,
               );
-            } else {
+            } else if (state is TvHasError){
               return Center(
                 key: Key('error_message'),
-                child: Text(data.message),
+                child: Text(state.message),
               );
+            } else {
+              return Text('Data Tidak Ada');
             }
           },
         ),
