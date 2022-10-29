@@ -1,10 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tv_series/common/state_enum.dart';
 import 'package:tv_series/common/utils.dart';
 import 'package:tv_series/presentation/provider/movie_bloc.dart';
 import 'package:tv_series/presentation/widgets/movie_card_list.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class WatchlistMoviesPage extends StatefulWidget {
   static const ROUTE_NAME = '/watchlist-movie';

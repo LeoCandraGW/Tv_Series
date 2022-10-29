@@ -4,10 +4,8 @@ import 'package:tv_series/common/constants.dart';
 import 'package:tv_series/domain/entities/genre.dart';
 import 'package:tv_series/domain/entities/tv.dart';
 import 'package:tv_series/domain/entities/tv_detail.dart';
-import 'package:tv_series/common/state_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:provider/provider.dart';
 import 'package:tv_series/presentation/provider/tv_bloc.dart';
 
 class TvDetailPage extends StatefulWidget {

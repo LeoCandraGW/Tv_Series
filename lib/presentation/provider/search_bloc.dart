@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:tv_series/data/models/tv_table.dart';
 import 'package:tv_series/domain/entities/movie.dart';
 import 'package:tv_series/domain/entities/tv.dart';
 import 'package:tv_series/domain/usecases/search_movies.dart';

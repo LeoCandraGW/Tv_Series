@@ -10,9 +10,7 @@ import 'package:tv_series/presentation/pages/search_movie_page.dart';
 import 'package:tv_series/presentation/pages/top_rated_movies_page.dart';
 import 'package:tv_series/presentation/pages/watchlist_movies_page.dart';
 import 'package:tv_series/presentation/provider/movie_bloc.dart';
-import 'package:tv_series/common/state_enum.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeMoviePage extends StatefulWidget {

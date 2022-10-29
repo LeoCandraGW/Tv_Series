@@ -29,7 +29,6 @@ import 'package:tv_series/domain/usecases/get_watchlist_status_movie.dart';
 import 'package:tv_series/domain/usecases/remove_watchlist_movie.dart';
 import 'package:tv_series/domain/usecases/save_watchlist_movie.dart';
 import 'package:tv_series/domain/usecases/search_movies.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tv_series/presentation/provider/tv_bloc.dart';
 import 'package:tv_series/presentation/provider/search_bloc.dart';
 import 'package:tv_series/presentation/provider/movie_bloc.dart';

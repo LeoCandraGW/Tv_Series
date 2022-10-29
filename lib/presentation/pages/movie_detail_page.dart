@@ -3,12 +3,9 @@ import 'package:tv_series/common/constants.dart';
 import 'package:tv_series/domain/entities/genre.dart';
 import 'package:tv_series/domain/entities/movie.dart';
 import 'package:tv_series/domain/entities/movie_detail.dart';
-import 'package:tv_series/common/state_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tv_series/presentation/pages/movies_page.dart';
 import 'package:tv_series/presentation/provider/movie_bloc.dart';
 
 class MovieDetailPage extends StatefulWidget {

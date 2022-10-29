@@ -1,9 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tv_series/common/state_enum.dart';
 import 'package:tv_series/presentation/provider/tv_bloc.dart';
 import 'package:tv_series/presentation/widgets/tv_card_list.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class TvPage extends StatefulWidget {
   static const ROUTE_NAME = '/tv';
