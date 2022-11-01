@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:tv_series/common/constants.dart';
 import 'package:tv_series/common/ssl_helper.dart';
 import 'package:tv_series/common/utils.dart';
@@ -26,8 +27,13 @@ import 'package:provider/provider.dart';
 import 'package:tv_series/injection.dart' as di;
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'firebase_options.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   await SslHelper.initializing();
   di.init();

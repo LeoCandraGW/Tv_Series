@@ -1,7 +1,7 @@
-
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 
-class MainHome extends StatelessWidget{
+class MainHome extends StatelessWidget {
   static const ROUTE_NAME = '/mainhome';
   @override
   Widget build(BuildContext context) {
@@ -14,19 +14,18 @@ class MainHome extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: (){
-                Navigator.pushNamed(context, '/hometv');
-              }, 
-              child: const Text('TV Series')),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/hometv');
+                },
+                child: const Text('TV Series')),
             ElevatedButton(
-              onPressed: (){
-                Navigator.pushNamed(context, '/homemovie');
-              }, 
-              child: const Text('Movies'))
+                onPressed: () {
+                  Navigator.pushNamed(context, '/homemovie');
+                },
+                child: const Text('Movies')),
           ],
         ),
       ),
     );
   }
-  
 }
