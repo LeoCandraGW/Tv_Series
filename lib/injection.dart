@@ -1,3 +1,4 @@
+import 'package:tv_series/common/ssl_helper.dart';
 import 'package:tv_series/data/datasources/db/database_helper_tv.dart';
 import 'package:tv_series/data/datasources/tv_local_data_source.dart';
 import 'package:tv_series/data/datasources/tv_remote_data_source.dart';
@@ -13,7 +14,6 @@ import 'package:tv_series/domain/usecases/get_watchlist_status_tv.dart';
 import 'package:tv_series/domain/usecases/remove_watchlist_tv.dart';
 import 'package:tv_series/domain/usecases/save_watchlist_tv.dart';
 import 'package:tv_series/domain/usecases/search_tv.dart';
-
 import 'package:tv_series/data/datasources/db/database_helper_movie.dart';
 import 'package:tv_series/data/datasources/movie_local_data_source.dart';
 import 'package:tv_series/data/datasources/movie_remote_data_source.dart';
@@ -32,7 +32,6 @@ import 'package:tv_series/domain/usecases/search_movies.dart';
 import 'package:tv_series/presentation/provider/tv_bloc.dart';
 import 'package:tv_series/presentation/provider/search_bloc.dart';
 import 'package:tv_series/presentation/provider/movie_bloc.dart';
-import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 
 final locator = GetIt.instance;
@@ -116,5 +115,5 @@ void init() {
   locator.registerLazySingleton<DatabaseHelperMovie>(() => DatabaseHelperMovie());
 
   // external
-  locator.registerLazySingleton(() => http.Client());
+  locator.registerLazySingleton(() => SslHelper.client);
 }

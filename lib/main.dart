@@ -1,4 +1,5 @@
 import 'package:tv_series/common/constants.dart';
+import 'package:tv_series/common/ssl_helper.dart';
 import 'package:tv_series/common/utils.dart';
 import 'package:tv_series/presentation/pages/about_page.dart';
 import 'package:tv_series/presentation/pages/home_movie_page.dart';
@@ -25,7 +26,10 @@ import 'package:provider/provider.dart';
 import 'package:tv_series/injection.dart' as di;
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await SslHelper.initializing();
   di.init();
   runApp(MyApp());
 }
