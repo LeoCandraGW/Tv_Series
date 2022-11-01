@@ -19,9 +19,8 @@ import 'package:tv_series/domain/entities/movie.dart' as _i9;
 import 'package:tv_series/domain/entities/movie_detail.dart' as _i10;
 import 'package:tv_series/domain/repositories/movie_repository.dart' as _i6;
 import 'package:http/src/base_request.dart' as _i20;
-import 'package:http/src/client.dart' as _i17;
+import 'package:http/io_client.dart' as _i17;
 import 'package:http/src/response.dart' as _i4;
-import 'package:http/src/streamed_response.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:sqflite_common/sqlite_api.dart' as _i16;
 
@@ -38,8 +37,16 @@ class _FakeMovieDetailResponse extends _i1.Fake
 
 class _FakeResponse extends _i1.Fake implements _i4.Response {}
 
-class _FakeStreamedResponse extends _i1.Fake implements _i5.StreamedResponse {}
-
+class _FakeIOStreamedResponse_3 extends _i1.SmartFake
+    implements _i17.IOStreamedResponse {
+  _FakeIOStreamedResponse_3(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
 /// A class which mocks [MovieRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -224,7 +231,7 @@ class MockDatabaseHelperMovie extends _i1.Mock implements _i15.DatabaseHelperMov
 /// A class which mocks [Client].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockHttpClient extends _i1.Mock implements _i17.Client {
+class MockHttpClient extends _i1.Mock implements _i17.IOClient {
   MockHttpClient() {
     _i1.throwOnMissingStub(this);
   }
@@ -291,11 +298,21 @@ class MockHttpClient extends _i1.Mock implements _i17.Client {
               returnValue: Future<_i19.Uint8List>.value(_i19.Uint8List(0)))
           as _i7.Future<_i19.Uint8List>);
   @override
-  _i7.Future<_i5.StreamedResponse> send(_i20.BaseRequest? request) =>
-      (super.noSuchMethod(Invocation.method(#send, [request]),
-              returnValue:
-                  Future<_i5.StreamedResponse>.value(_FakeStreamedResponse()))
-          as _i7.Future<_i5.StreamedResponse>);
+  _i7.Future<_i17.IOStreamedResponse> send(_i20.BaseRequest? request) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #send,
+          [request],
+        ),
+        returnValue:
+            _i7.Future<_i17.IOStreamedResponse>.value(_FakeIOStreamedResponse_3(
+          this,
+          Invocation.method(
+            #send,
+            [request],
+          ),
+        )),
+      ) as _i7.Future<_i17.IOStreamedResponse>);
   @override
   void close() => super.noSuchMethod(Invocation.method(#close, []),
       returnValueForMissingStub: null);

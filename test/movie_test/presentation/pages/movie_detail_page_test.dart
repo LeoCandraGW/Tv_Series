@@ -13,7 +13,6 @@ void main() {
   late MovieDetailBlocHelper movieDetailBlocHelper;
   late RecommendationsMovieBlocHelper recommendationsMovieBlocHelper;
   late WatchlistMovieBlocHelper watchlistMovieBlocHelper;
-  late PopularMoviesBlocHelper popularMoviesBlocHelper;
 
   setUpAll(() {
     movieDetailBlocHelper = MovieDetailBlocHelper();
@@ -27,8 +26,6 @@ void main() {
     watchlistMovieBlocHelper = WatchlistMovieBlocHelper();
     registerFallbackValue(WatchlistMovieEventHelper());
     registerFallbackValue(WatchlistMovieStateHelper());
-
-    popularMoviesBlocHelper = PopularMoviesBlocHelper();
     registerFallbackValue(PopularMoviesEventHelper());
     registerFallbackValue(PopularMoviesStateHelper());
 
