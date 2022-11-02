@@ -37,6 +37,7 @@ class _FakeMovieDetailResponse extends _i1.Fake
 
 class _FakeResponse extends _i1.Fake implements _i4.Response {}
 
+// ignore: camel_case_types
 class _FakeIOStreamedResponse_3 extends _i1.SmartFake
     implements _i17.IOStreamedResponse {
   _FakeIOStreamedResponse_3(
