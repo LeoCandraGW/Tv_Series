@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "854104840843",
+    "project_id": "tv-series-188ee",
+    "storage_bucket": "tv-series-188ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854104840843:android:9f9f0279be99f6aa87528e",
+        "android_client_info": {
+          "package_name": "com.dicoding.ditonton"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854104840843-3ug1cv9oges1058cfnb1tj7js00se9aq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiV-jbUz1pmHxLuFe70euFGtzlNOc6yCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854104840843-3ug1cv9oges1058cfnb1tj7js00se9aq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "854104840843-lug50f8a8q7p53nbatktgfot4qmbfq63.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dicoding.ditonton"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
